@@ -1,6 +1,6 @@
 .card {
   padding: 20px;
-
+  background-color: #7B88CE;
   .card-content {
     padding: 0;
   }
@@ -8,6 +8,7 @@
   .card-action {
     border-top: none;
     padding: 0;
+    background-color: transparent;
   }
 }
 
@@ -25,7 +26,12 @@
   input {
     color: white;
   }
+  input[type=text]:not(.browser-default){
+    border-bottom: 1px solid #fff;
+  }
 }
+
+
 
 .input-field>label:not(.label-icon).active {
   transform: translateY(-10px);
