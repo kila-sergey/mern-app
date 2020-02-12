@@ -1,0 +1,42 @@
+.card {
+  padding: 20px;
+
+  .card-content {
+    padding: 0;
+  }
+
+  .card-action {
+    border-top: none;
+    padding: 0;
+  }
+}
+
+.btn {
+  display: block;
+  min-width: 200px;
+  border-radius: 5px;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.input-field {
+  input {
+    color: white;
+  }
+}
+
+.input-field>label:not(.label-icon).active {
+  transform: translateY(-10px);
+  font-size: .8rem;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid #f8f40c;
+  box-shadow: 0 1px 0 0 #f8f40c;
+}
+
+input[type=text]:not(.browser-default):focus:not([readonly])+label {
+  color: #f8f40c;
+}
