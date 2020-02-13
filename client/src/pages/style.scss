@@ -1,6 +1,7 @@
 .card {
   padding: 20px;
   background-color: #7B88CE;
+
   .card-content {
     padding: 0;
   }
@@ -26,7 +27,8 @@
   input {
     color: white;
   }
-  input[type=text]:not(.browser-default){
+
+  input[type=text]:not(.browser-default) {
     border-bottom: 1px solid #fff;
   }
 }
@@ -38,11 +40,14 @@
   font-size: .8rem;
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly]) {
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]),
+input.valid[type=password]:not(.browser-default) {
   border-bottom: 1px solid #f8f40c;
   box-shadow: 0 1px 0 0 #f8f40c;
 }
 
-input[type=text]:not(.browser-default):focus:not([readonly])+label {
+input[type=text]:not(.browser-default):focus:not([readonly])+label,
+input[type=password]:not(.browser-default):focus:not([readonly])+label {
   color: #f8f40c;
 }

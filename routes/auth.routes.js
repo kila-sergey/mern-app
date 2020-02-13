@@ -10,8 +10,8 @@ const router = Router();
 router.post(
   '/register',
   [
-    check('email', 'Incorrect email').isEmail(),
-    check('password', 'Should be 6 symbols at least')
+    check('email', 'Неверный email').isEmail(),
+    check('password', 'Минимум 6 символов')
       .isLength({min:6})
   ],
   async (req, res) => {
@@ -21,7 +21,7 @@ router.post(
     if(!errors.isEmpty()){
       return res.status(400).json({
         errors: errors.array(),
-        message: 'Invalid registration data'
+        message: 'Неверные данные при регистрации'
       })
     }
     const { email, password } = req.body;
@@ -30,7 +30,7 @@ router.post(
 
     if (candidate) {
       return res.status(400).json({
-        message:'Email is used by another user'
+        message:'Такой email уже существует'
       })
     }
 
@@ -41,7 +41,7 @@ router.post(
     await user.save();
 
     res.status(201).json({
-      message: 'User was created'
+      message: 'Пользователь создан'
     })
   } catch (err) {
     res.status(500).json({message: 'Something get wrong'})
@@ -52,8 +52,8 @@ router.post(
 router.post(
   '/login',
   [
-    check('email', 'Enter correct email').normalizeEmail().isEmail(),
-    check('password', 'Enter password').exists()
+    check('email', 'Некорректный email').normalizeEmail().isEmail(),
+    check('password', 'Введите пароль').exists()
   ],
   async (req, res) => {
   try {
@@ -62,7 +62,7 @@ router.post(
     if(!errors.isEmpty()){
       return res.status(400).json({
         errors: errors.array(),
-        message: 'Invalid login data'
+        message: 'Неверные данные для входа'
       })
     }
     
@@ -72,7 +72,7 @@ router.post(
 
     if (!user) {
       return res.status(500).json({
-        message:'User not found'
+        message:'Пользователь не найден'
       })
     }
 
@@ -80,7 +80,7 @@ router.post(
 
     if(!isMatch){
       return res.status(400).json({
-        message:'Password is incorrect, try again'
+        message:'Неверный пароль'
       })
     }
 
