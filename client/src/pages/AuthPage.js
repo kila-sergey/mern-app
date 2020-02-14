@@ -61,6 +61,7 @@ const AuthPage = () => {
                 type="text"
                 className="validate"
                 name="email"
+                value={form.email}
                 onChange={changeHandler} />
               <label htmlFor="email">Email</label>
             </div>
@@ -72,6 +73,7 @@ const AuthPage = () => {
                 className="validate"
                 autoComplete="off"
                 name="password"
+                value={form.password}
                 onChange={changeHandler} />
               <label htmlFor="password">Password</label>
             </div>

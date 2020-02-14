@@ -40,11 +40,23 @@
   font-size: .8rem;
 }
 
+.input-field input[type=text]:not(.browser-default) {
+  &.primary-input {
+    color: #000;
+    border-bottom: 1px solid #000;
+  }
+}
+
 input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 input.valid[type=password]:not(.browser-default) {
   border-bottom: 1px solid #f8f40c;
   box-shadow: 0 1px 0 0 #f8f40c;
+
+  &.primary-input {
+    border-bottom: 1px solid #7B88CE;
+    box-shadow: 0 1px 0 0 #7B88CE;
+  }
 }
 
 input[type=text]:not(.browser-default):focus:not([readonly])+label,

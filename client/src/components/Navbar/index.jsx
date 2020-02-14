@@ -18,8 +18,8 @@ export const NavBar = () => {
       <div className="nav-wrapper">
         <span href="/" className="brand-logo">Сокращение ссылок</span>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li><NavLink to="/create">Ссылки</NavLink></li>
-          <li><NavLink to="/links">Создать</NavLink></li>
+          <li><NavLink to="/create">Создать</NavLink></li>
+          <li><NavLink to="/links">Ссылки</NavLink></li>
           <li><a href="/" onClick={(e)=>logoutHandler(e)}>Выйти</a></li>
         </ul>
       </div>
